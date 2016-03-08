@@ -23,6 +23,7 @@ public class HTTPDataHandler {
             URL url = new URL(urlString);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
+            stream = String.valueOf(urlConnection.getResponseCode());
             // Check the connection status
             if(urlConnection.getResponseCode() == 200)
             {
@@ -44,7 +45,7 @@ public class HTTPDataHandler {
             }
             else
             {
-                // Do something
+                stream ="No consegui naaaada!!";
             }
         }catch (MalformedURLException e){
             e.printStackTrace();
